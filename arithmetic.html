@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Do Math</title>
+    </head>
+
+    <body>
+        <p>
+            Input number: <input type="number" id="num1">
+            <br>
+            Input number: <input type="number" id="num2">
+        </p>
+
+        <p>
+            <button onclick="add()">Add</button>
+            <button onclick="subtract()">Subtract</button>
+            <button onclick="multiply()">Multiply</button>
+            <button onclick="divide()">Divide</button>
+        </p>
+        
+        <p>
+            Result: <span id="result"></span>
+        </p>
+
+        <script>
+            // Don't let me define global variables more than once.
+            "use strict";
+
+            // Function to add the numbers together.
+            function add() {
+                let num1 = Number(document.getElementById('num1').value);
+                let num2 = Number(document.getElementById('num2').value);
+                let result = num1 + num2;
+                document.getElementById('result').innerText = result;
+            }
+
+            // Function to subtract the two numbers.
+            function subtract() {
+                let num1 = Number(document.getElementById('num1').value);
+                let num2 = Number(document.getElementById('num2').value);
+                let result = num1 - num2;
+                document.getElementById('result').innerText = result;
+            }
+
+            // Function to multiply the two numbers.
+            function multiply() {
+                let num1 = Number(document.getElementById('num1').value);
+                let num2 = Number(document.getElementById('num2').value);
+                let result = num1 * num2;
+                document.getElementById('result').innerText = result;
+            }
+
+            // Function to divide the two numbers.
+            function divide() {
+                let num1 = Number(document.getElementById('num1').value);
+                let num2 = Number(document.getElementById('num2').value);
+                
+                // Don't let the user be silly.
+                if (num2 === 0) {
+                    document.getElementById('result').innerText = 'Hey, you can\'t divide by zero. You learned this in the 3rd grade.';
+                } else {
+                    let result = num1 / num2;
+                    document.getElementById('result').innerText = result;
+                }
+            }
+        </script>
+    </body>
+</html>
